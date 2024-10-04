@@ -55,6 +55,18 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Desa Wisata Boonpring \n'
+        'Desa Wisata Andeman Boonpring Sanankerto, Kecamatan Turen, Kabupaten Malang menyuguhkan suasana asri,'
+        'pengunjung dijamin betah. Selain itu, pengunjung bakal diajak mengenal 115 jenis bambu dan berwisata menikmati fasilitas di sana, '
+        'seperti sepeda air, naik perahu, kolam renang, dan Arboretum Bambu atau museum pohon bambu\n'
+        'Daffa Yudisa Akbar - 2241720008',
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Daffa Yudisa A - 2241720008',
       home: Scaffold(
@@ -65,6 +77,7 @@ class MyApp extends StatelessWidget {
           children: [
             titleSection,
             buttonSection,
+            textSection,
           ],
         ),
       ),
