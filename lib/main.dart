@@ -21,14 +21,14 @@ class MyApp extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: const Text(
-                    'Wisata Gunung di Batu',
+                    'Desa Wisata Boonpring',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 Text(
-                  'Batu, Malang, Indonesia',
+                  'Turen, Kabupaten Malang, Indonesia',
                   style: TextStyle(color: Colors.grey),
                 ),
               ],
@@ -58,7 +58,6 @@ class MyApp extends StatelessWidget {
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
       child: const Text(
-        'Desa Wisata Boonpring \n'
         'Desa Wisata Andeman Boonpring Sanankerto, Kecamatan Turen, Kabupaten Malang menyuguhkan suasana asri,'
         'pengunjung dijamin betah. Selain itu, pengunjung bakal diajak mengenal 115 jenis bambu dan berwisata menikmati fasilitas di sana, '
         'seperti sepeda air, naik perahu, kolam renang, dan Arboretum Bambu atau museum pohon bambu\n'
@@ -73,8 +72,14 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter layout demo'),
         ),
-        body: Column(
+        body: ListView(
           children: [
+            Image.asset(
+              'images/boonpring-turen.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
             titleSection,
             buttonSection,
             textSection,
