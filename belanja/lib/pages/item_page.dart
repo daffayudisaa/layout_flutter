@@ -4,23 +4,24 @@ import 'package:belanja/models/item.dart';
 class ItemPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Item item = ModalRoute.of(context)!.settings.arguments as Item;
+    // Ambil argumen yang diterima
+    final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(item.name),
+        title: Text(itemArgs.name), // Tampilkan nama item di AppBar
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Name: ${item.name}',
+              'Name: ${itemArgs.name}', // Tampilkan nama item
               style: TextStyle(fontSize: 24),
             ),
             SizedBox(height: 16),
             Text(
-              'Price: ${item.price}',
+              'Price: ${itemArgs.price}', // Tampilkan harga item
               style: TextStyle(fontSize: 20),
             ),
           ],
