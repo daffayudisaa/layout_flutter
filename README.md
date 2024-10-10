@@ -35,7 +35,7 @@ A New Flutter Project for Mobile Programming Week 6.
 
     * Hasil Praktikum 1 
 
-        ![alt text](flutter_layout/images/Praktikum1/hasil.png) 
+        ![alt text](flutter_layout/images/Praktikum1/Hasil.png) 
 
 <br></br>
 
@@ -81,7 +81,7 @@ A New Flutter Project for Mobile Programming Week 6.
 
     * Hasil Praktkikum 3
 
-        ![alt text](flutter_layout/images/Praktikum3/hasil.png)
+        ![alt text](flutter_layout/images/Praktikum3/Hasil.png)
 
 <br></br>
 
@@ -112,7 +112,10 @@ A New Flutter Project for Mobile Programming Week 6.
 2. Silakan implementasikan di project baru "basic_layout_flutter" dengan mengakses sumber ini: https://docs.flutter.dev/codelabs/layout-basics
 
     **Jawab:**
-     
+    Link Project:
+   
+    https://github.com/daffayudisaa/layout_flutter/tree/master/basic_layout_flutter
+
     Hasil Run Program:
     
     ![alt text](basic_layout_flutter/HasilPraktikum.png)
