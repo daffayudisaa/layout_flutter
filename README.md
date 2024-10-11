@@ -221,8 +221,9 @@ A New Flutter Project for Mobile Programming Week 6.
     Kode di atas menggunakan Hero widget untuk memberikan animasi transisi yang mulus antara halaman daftar produk dan halaman detail produk pada aplikasi belanja. Hero widget membungkus gambar produk di kedua halaman dengan tag unik, yaitu nama produk, yang memungkinkan Flutter mengenali elemen yang sama di kedua halaman saat transisi. Ketika pengguna mengetuk gambar produk pada halaman utama (HomePage), aplikasi akan menavigasi ke halaman detail (ItemPage), dan gambar produk akan beranimasi secara mulus, membesar atau mengecil sesuai konteks halaman.
 
     * Hasil:
-    ![alt text](belanja/images/Praktikum5/Tugas2-4(gif).gif)
 
+    ![alt text](belanja/images/Praktikum5/Tugas2-4(hasil).gif)
+    
 <br></br>
 
 5. Sesuaikan dan modifikasi tampilan sehingga menjadi aplikasi yang menarik. Selain itu, pecah widget menjadi kode yang lebih kecil. Tambahkan Nama dan NIM di footer aplikasi belanja Anda.
