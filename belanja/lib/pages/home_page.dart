@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:belanja/models/item.dart';
+import 'package:go_router/go_router.dart';
 
 // Widget HomePage
 class HomePage extends StatelessWidget {
+  HomePage({super.key});
+
   final List<Item> items = [
     Item(
       name: 'Sugar',
@@ -98,7 +101,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, '/item', arguments: item);
+        context.go('/item', extra: item);
       },
       child: Card(
         elevation: 4,
