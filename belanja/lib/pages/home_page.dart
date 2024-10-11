@@ -52,10 +52,9 @@ class HomePage extends StatelessWidget {
         title: Text('Shopping List'),
       ),
       body: GridView.builder(
-        shrinkWrap: true,
         padding: EdgeInsets.all(8),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 300,
+          maxCrossAxisExtent: 380,
           childAspectRatio: 0.75,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
@@ -70,10 +69,14 @@ class HomePage extends StatelessWidget {
             child: Card(
               child: Column(
                 children: [
-                  Image.network(
-                    item.imageUrl,
-                    height: 150, // Tinggi gambar
-                    fit: BoxFit.cover, // Menyesuaikan ukuran gambar
+                  // Tambahkan Hero widget di sini
+                  Hero(
+                    tag: item.name, // Tag unik untuk setiap item
+                    child: Image.network(
+                      item.imageUrl,
+                      height: 150,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),

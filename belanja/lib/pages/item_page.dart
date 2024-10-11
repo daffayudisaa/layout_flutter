@@ -14,13 +14,17 @@ class ItemPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(
-              itemArgs.imageUrl, // Tampilkan gambar produk
-              height: 400, // Tinggi gambar
+            // Tambahkan Hero widget di sini untuk gambar
+            Hero(
+              tag: itemArgs.name, // Tag yang sama dengan di HomePage
+              child: Image.network(
+                itemArgs.imageUrl,
+                height: 400,
+              ),
             ),
             SizedBox(height: 16),
             Text(
-              '${itemArgs.name}',
+              'Name: ${itemArgs.name}',
               style: TextStyle(fontSize: 24),
             ),
             SizedBox(height: 16),
