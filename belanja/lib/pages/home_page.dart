@@ -1,6 +1,7 @@
-import 'package:belanja/models/item.dart';
 import 'package:flutter/material.dart';
+import 'package:belanja/models/item.dart';
 
+// Widget HomePage
 class HomePage extends StatelessWidget {
   final List<Item> items = [
     Item(
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
       rating: 4.0,
     ),
     Item(
-      name: 'Black Papper',
+      name: 'Black Pepper',
       price: 30000,
       imageUrl:
           'https://down-id.img.susercontent.com/file/23176b2f4ef1595e305b401af5ce2a3b',
@@ -36,7 +37,7 @@ class HomePage extends StatelessWidget {
       rating: 4.8,
     ),
     Item(
-      name: 'White Papper',
+      name: 'White Pepper',
       price: 29000,
       imageUrl:
           'https://down-id.img.susercontent.com/file/79a7b300d6a456627f5adc6158bf7a43',
@@ -50,58 +51,105 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Shopping List'),
+        backgroundColor: Color.fromARGB(255, 236, 221, 239),
       ),
-      body: GridView.builder(
-        padding: EdgeInsets.all(8),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 380,
-          childAspectRatio: 0.75,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          final item = items[index];
-          return InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/item', arguments: item);
-            },
-            child: Card(
-              child: Column(
-                children: [
-                  // Tambahkan Hero widget di sini
-                  Hero(
-                    tag: item.name, // Tag unik untuk setiap item
-                    child: Image.network(
-                      item.imageUrl,
-                      height: 150,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      item.name,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ),
-                  Text(
-                    'Price: ${item.price}',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                  Text(
-                    'Stock: ${item.stock}',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                  Text(
-                    'Rating: ${item.rating}',
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ],
+      body: Column(
+        children: [
+          Expanded(child: ProductGrid(items: items)),
+          Footer(),
+        ],
+      ),
+    );
+  }
+}
+
+// Widget untuk menampilkan grid produk
+class ProductGrid extends StatelessWidget {
+  final List<Item> items;
+
+  ProductGrid({required this.items});
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      padding: EdgeInsets.all(8),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 380,
+        childAspectRatio: 0.75,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+      ),
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        final item = items[index];
+        return ProductCard(item: item);
+      },
+    );
+  }
+}
+
+// Widget untuk menampilkan card produk
+class ProductCard extends StatelessWidget {
+  final Item item;
+
+  ProductCard({required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, '/item', arguments: item);
+      },
+      child: Card(
+        elevation: 4,
+        child: Column(
+          children: [
+            Hero(
+              tag: item.name,
+              child: Image.network(
+                item.imageUrl,
+                height: 150,
+                fit: BoxFit.cover,
               ),
             ),
-          );
-        },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                item.name,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Text(
+              'Price: ${item.price}',
+              style: TextStyle(fontSize: 14, color: Colors.grey[700]),
+            ),
+            Text(
+              'Stock: ${item.stock}',
+              style: TextStyle(fontSize: 14, color: Colors.grey[700]),
+            ),
+            Text(
+              'Rating: ${item.rating}',
+              style: TextStyle(fontSize: 14, color: Colors.orange[600]),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Widget Footer untuk Nama dan NIM
+class Footer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color.fromARGB(255, 236, 221, 239),
+      padding: EdgeInsets.all(10),
+      child: Center(
+        child: Text(
+          'Nama: Daffa Yudisa Akbar | NIM: 2241720008',
+          style: TextStyle(color: Colors.black, fontSize: 16),
+        ),
       ),
     );
   }
